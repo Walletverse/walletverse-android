@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/view_titlebar" />
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        app:background_normal="@color/color_bg1"
+        app:corner_radius="12dp"
+        >
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/Walletverse_Text1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="15dp"
+                android:text="@string/mnemonic_or_private_key"
+                android:textColor="@color/color_tv3" />
+
+            <ImageView
+                android:id="@+id/v_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:src="@mipmap/icon_close" />
+
+
+        </com.ruffian.library.widget.RLinearLayout>
+
+        <com.ruffian.library.widget.REditText
+            android:id="@+id/v_content"
+            style="@style/Walletverse_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="top"
+            android:lines="3"
+            android:paddingBottom="10dp"
+            />
+
+
+    </com.ruffian.library.widget.RLinearLayout>
+
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_name"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/wallet_name"
+        android:inputType="text"
+        android:maxLength="50"
+        android:singleLine="true"
+        app:background_normal="@color/color_bg1"
+        app:corner_radius="12dp" />
+
+    <TextView
+        android:id="@+id/v_pin_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Walletverse_Text2"
+        android:text="@string/please_input_6_pin"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        />
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_pin"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="5dp"
+        android:hint="@string/pin"
+        android:inputType="number"
+        app:background_normal="@color/color_bg1"
+        android:maxLength="6"
+        app:corner_radius="12dp"
+        android:layout_marginHorizontal="15dp"/>
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_check_pin"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/check_pin"
+        android:inputType="number"
+        app:background_normal="@color/color_bg1"
+        android:maxLength="6"
+        app:corner_radius="12dp"
+        android:layout_marginHorizontal="15dp"/>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.walletverse.ui.view.WalletverseButton
+        android:id="@+id/v_import"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="30dp"
+        app:befi_text="@string/import_text" />
+
+</LinearLayout>

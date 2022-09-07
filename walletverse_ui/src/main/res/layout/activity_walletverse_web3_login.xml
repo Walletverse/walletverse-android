@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+       <View
+           android:id="@+id/v_status_bar"
+           android:layout_width="match_parent"
+           android:layout_height="0dp" />
+
+       <include layout="@layout/view_titlebar" />
+   </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_web3_bg"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="30dp">
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:id="@+id/v_create_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            app:corner_radius="12dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            app:background_normal="@color/color_bg1"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Walletverse_Text1_Bold"
+                    android:text="@string/create_wallet"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Walletverse_Text2"
+                    android:text="@string/create_new_wallet"
+                    android:layout_marginTop="3dp"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_enter"/>
+
+        </com.ruffian.library.widget.RLinearLayout>
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:id="@+id/v_import"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:orientation="horizontal"
+            app:corner_radius="12dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="20dp"
+            app:background_normal="@color/color_bg1"
+            android:layout_marginTop="10dp"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Walletverse_Text1_Bold"
+                    android:text="@string/import_wallet"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Walletverse_Text2"
+                    android:text="@string/import_existing_wallet"
+                    android:layout_marginTop="3dp"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_enter"/>
+
+        </com.ruffian.library.widget.RLinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

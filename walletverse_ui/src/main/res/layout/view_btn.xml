@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/v_btn"
+    style="@style/Walletverse_Button"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    app:background_unable="@color/colorPrimaryAlpha"
+    app:background_normal="@color/colorPrimary"
+    app:text_color_normal="@color/white"
+    app:ripple="true"
+    app:ripple_color="@color/colorPrimaryRipple"
+    />
+<!--    app:text_color_unable="@color/color_tv1_alpha"-->

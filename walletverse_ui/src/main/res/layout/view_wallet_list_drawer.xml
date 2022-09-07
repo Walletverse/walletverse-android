@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <TextView
+        style="@style/Walletverse_Text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="35dp"
+        android:text="@string/wallet_list" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/v_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/v_add_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:background_normal="@color/colorPrimary"
+        app:corner_radius="6dp"
+        android:text="@string/add_wallet"
+        app:ripple="true"
+        android:fontFamily="sans-serif-medium"
+        app:ripple_color="@color/color_tv3"
+        app:text_color_normal="@color/white"/>
+
+
+</LinearLayout>

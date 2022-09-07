@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/icon_auth_login_bg_light"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingVertical="35dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_auth_login_logo"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/color_tv1"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/v_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp"
+                android:paddingLeft="20dp"
+                android:src="@mipmap/icon_close"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/Walletverse_Text2_Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/continue_with"
+            android:layout_marginHorizontal="25dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/v_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="15dp"/>
+
+        <TextView
+            style="@style/Walletverse_Text2_Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/email"
+            android:layout_marginHorizontal="25dp"/>
+
+
+        <com.ruffian.library.widget.REditText
+            android:id="@+id/v_email"
+            style="@style/Walletverse_EditText_Bold"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/hello_befi_example_com"
+            android:inputType="textEmailAddress"
+            app:background_normal="@color/color_bg1"
+            app:corner_radius="24dp"
+            android:layout_marginHorizontal="25dp"
+            />
+
+
+        <com.walletverse.ui.view.WalletverseButton
+            android:id="@+id/v_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:befi_text="@string/continue_with_email"
+            android:layout_marginTop="10dp"
+            app:befi_enable="false"
+            android:layout_marginHorizontal="25dp"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+
+        <com.walletverse.ui.view.WalletverseButton
+            android:id="@+id/v_web3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:befi_text="@string/use_web3"
+            android:layout_marginHorizontal="25dp"
+            />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

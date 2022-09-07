@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:corner_radius="12dp"
+    app:background_normal="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Walletverse_Text1_Bold"
+        android:text="BeFi"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/v_content"
+        style="@style/Walletverse_Text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="25dp"
+        android:gravity="center"
+        />
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/color_bg1"/>-->
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="15dp"
+        >
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/v_cancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            style="@style/Walletverse_Text2"
+            android:textSize="16sp"
+            android:text="@string/cancel"
+            app:ripple="true"
+            app:ripple_color="@color/color_bg1"
+            android:layout_marginHorizontal="15dp"
+            app:corner_radius="12dp"
+            app:background_normal="@color/color_tv1"
+            app:text_color_normal="@color/white"/>
+
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/v_confirm"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            style="@style/Walletverse_Text1"
+            android:textSize="16sp"
+            android:text="@string/confirm"
+            app:ripple="true"
+            app:ripple_color="@color/color_bg1"
+            android:layout_marginHorizontal="15dp"
+            app:corner_radius="12dp"
+            app:background_normal="@color/colorPrimary"
+            app:text_color_normal="@color/white"/>
+
+    </com.ruffian.library.widget.RLinearLayout>
+
+
+
+
+</com.ruffian.library.widget.RLinearLayout>

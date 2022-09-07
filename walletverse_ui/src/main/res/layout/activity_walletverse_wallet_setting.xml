@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/view_titlebar" />
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:id="@+id/v_modify_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:background_normal="@color/color_bg1"
+        app:corner_radius="12dp">
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="18dp"
+            app:background_normal="@color/color_bg1"
+            app:corner_radius="12dp"
+            app:ripple="true"
+            app:ripple_color="@color/color_tv3">
+
+
+            <TextView
+                style="@style/Walletverse_Text1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/modify_wallet_name"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_enter" />
+
+
+        </com.ruffian.library.widget.RLinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_bg3" />
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:id="@+id/v_private_key"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="18dp"
+            app:background_normal="@color/color_bg1"
+            app:corner_radius="12dp"
+            app:ripple="true"
+            app:ripple_color="@color/color_tv3"
+            android:visibility="gone">
+
+
+            <TextView
+                style="@style/Walletverse_Text1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/private_key"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_enter" />
+
+
+        </com.ruffian.library.widget.RLinearLayout>
+
+<!--        <View-->
+<!--            android:id="@+id/v_line"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="@color/color_bg3" />-->
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:id="@+id/v_mnemonic"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="18dp"
+            app:background_normal="@color/color_bg1"
+            app:corner_radius="12dp"
+            app:ripple="true"
+            app:ripple_color="@color/color_tv3"
+            android:visibility="gone">
+
+
+            <TextView
+                style="@style/Walletverse_Text1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mnemonic"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_enter" />
+
+
+        </com.ruffian.library.widget.RLinearLayout>
+
+    </com.ruffian.library.widget.RLinearLayout>
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:id="@+id/v_delete_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="18dp"
+        app:background_normal="@color/color_bg1"
+        app:corner_radius="12dp"
+        app:ripple="true"
+        app:ripple_color="@color/color_tv3">
+
+
+        <TextView
+            style="@style/Walletverse_Text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/delete_wallet"
+            android:textColor="@color/color_red"
+            android:textSize="14sp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_enter" />
+
+    </com.ruffian.library.widget.RLinearLayout>
+
+    <TextView
+        android:id="@+id/v_wallet_id"
+        style="@style/Walletverse_Text2_Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="30dp"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:lineSpacingExtra="1.2dp"/>
+
+</LinearLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.walletverse.ui">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:name=".WalletverseApplication"
+        android:networkSecurityConfig="@xml/network_security_config">
+        <activity
+            android:name=".ui.activity.WalletverseWebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseTokenSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseFeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseAddTokenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseTokenListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseChainManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseWalletSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseTransactionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseReceiveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseCoinDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseImportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseVerifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseMnemonicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseCreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseWeb2CreateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseWeb3LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseWeb2LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.HomeActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="768" />
+
+        <activity
+            android:name=".ui.activity.WalletverseTransferActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.EnterActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:theme="@style/AppMaterialTheme" />
+        <activity
+            android:name=".ui.activity.DevelopActivity"
+            android:exported="false"
+            android:theme="@style/AppMaterialTheme" />
+        <activity
+            android:name="com.king.zxing.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CaptureTheme" />
+    </application>
+
+</manifest>

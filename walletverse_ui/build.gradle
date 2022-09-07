@@ -1,0 +1,91 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+//    id 'kotlin-parcelize'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation files('libs/walletverse_core-1.0.0.aar')
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation("org.greenrobot:eventbus:3.3.1")
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
+    // define a BOM and its version
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.10.0"))
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.blankj:utilcodex:1.31.0'
+
+    implementation 'com.guolindev.permissionx:permissionx:1.6.4'
+    implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    implementation 'com.github.li-xiaojun:XPopup:2.8.14'
+
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0'
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    implementation 'com.github.getActivity:TitleBar:9.5'
+
+    implementation 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+    implementation 'com.geyifeng.immersionbar:immersionbar-ktx:3.2.2'
+
+    implementation 'com.github.RuffianZhong:RWidgetHelper:androidx.v0.0.10'
+
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7"
+
+    implementation 'com.github.jenly1314:zxing-lite:2.1.1'
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    implementation  'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    implementation  'io.github.scwang90:refresh-header-material:2.0.5'
+    implementation  'io.github.scwang90:refresh-footer-classics:2.0.5'
+
+//    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+
+    implementation 'com.caverock:androidsvg:1.4'
+}

@@ -1,0 +1,96 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Walletverse_Text1">
+        <item name="android:textColor">@color/color_tv1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Walletverse_Text1_Bold" parent="@style/Walletverse_Text1">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="AppMaterialTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Walletverse_Text2">
+        <item name="android:textColor">@color/color_tv2</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Walletverse_Text2_Bold" parent="@style/Walletverse_Text2">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Walletverse_Text3">
+        <item name="android:textColor">@color/color_tv3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Walletverse_EditText">
+        <item name="android:background">@color/color_bg1</item>
+        <item name="hintTextColor">@color/color_tv3</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@color/color_tv1</item>
+    </style>
+
+    <style name="Walletverse_EditText_Bold" parent="@style/Walletverse_EditText">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="Walletverse_EditText_Common">
+        <item name="android:background">@color/white</item>
+        <item name="hintTextColor">@color/color_tv3</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@color/color_tv1</item>
+    </style>
+
+    <style name="Walletverse_Button">
+        <item name="android:height">48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <declare-styleable name="RoundRectLayout">
+        <attr name="round" format="dimension" />
+        <attr name="leftTopRound" format="dimension" />
+        <attr name="rightTopRound" format="dimension" />
+        <attr name="leftBottomRound" format="dimension" />
+        <attr name="rightBottomRound" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="BeFiButton">
+        <attr name="befi_round" format="dimension" />
+        <attr name="befi_leftTopRound" format="dimension" />
+        <attr name="befi_rightTopRound" format="dimension" />
+        <attr name="befi_leftBottomRound" format="dimension" />
+        <attr name="befi_rightBottomRound" format="dimension" />
+        <attr name="befi_text" format="string" />
+        <attr name="befi_enable" format="boolean" />
+        <attr name="befi_background_normal" format="color" />
+        <attr name="befi_background_unable" format="color" />
+    </declare-styleable>
+
+</resources>

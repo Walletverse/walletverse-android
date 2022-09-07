@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_wallet"
+        android:icon="@mipmap/icon_wallet_unselected_light"
+        android:title="@string/wallet"/>
+
+<!--    <item-->
+<!--        android:id="@+id/nav_dapp"-->
+<!--        android:icon="@mipmap/icon_discover_unselected_light"-->
+<!--        android:title="@string/dapp"/>-->
+
+    <item
+        android:id="@+id/nav_me"
+        android:icon="@mipmap/icon_mine_unselected_light"
+        android:title="@string/me"/>
+</menu>

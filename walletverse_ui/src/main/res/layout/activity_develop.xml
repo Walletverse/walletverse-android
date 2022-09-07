@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tx_result"
+        android:layout_width="match_parent"
+        android:layout_height="400px"
+        android:background="@color/_xpopup_content_color"
+        android:text="Result..."
+        android:textColor="@color/_xpopup_white_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_mnemonic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mnemonic" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="balance" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_nonce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nonce" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_decimals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="decimals" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_encodeAuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EncodeAuth" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_encodeMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EncodeMessage" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_test_net"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TestNet" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ERROR" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/b_sdk_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SDK VERSION" />
+    </LinearLayout>
+
+
+</LinearLayout>

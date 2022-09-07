@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#5C74FF</color>
+    <color name="colorPrimaryRipple">#ffffff</color>
+    <color name="colorPrimaryAlpha">#80448AFF</color>
+    <color name="colorPrimaryDark">#FF5C74FF</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="color_tv1">#1C1E27</color>
+    <color name="color_tv1_alpha">#801C1E27</color>
+    <color name="color_tv2">#7D7F86</color>
+    <color name="color_tv3">#A8ABB2</color>
+    <color name="color_bg1">#F5F6FA</color>
+    <color name="color_bg3">#F0F1F5</color>
+    <color name="color_red">#FF0000</color>
+    <color name="color_green">#1AFA29</color>
+
+</resources>

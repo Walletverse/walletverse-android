@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hjq.bar.TitleBar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/actionBarSize"
+    android:background="@color/white"
+    app:leftIcon="@mipmap/ic_back"
+    app:titleColor="@color/color_tv1"
+    app:leftHorizontalPadding="15dp"
+    app:rightHorizontalPadding="15dp"
+    app:lineVisible="false"
+    app:titleSize="18sp" /><!--    app:titleStyle="bold"-->
+    <!--    app:rightIcon="@mipmap/ic_filter"-->
+<!--    app:rightIconWidth="24dp"-->
+<!--    app:rightIconHeight="24dp"-->

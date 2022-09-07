@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:background_normal="@color/white"
+    app:corner_radius_top_left="8dp"
+    app:corner_radius_top_right="8dp">
+
+
+
+    <com.lxj.xpopup.widget.VerticalRecyclerView
+        android:orientation="vertical"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+
+<!--    <View-->
+<!--        android:id="@+id/vv_divider"-->
+<!--        android:background="@color/color_bg1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="10dp"/>-->
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/tv_cancel"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/cancel"
+        app:text_color_normal="@color/white"
+        android:textSize="15sp"
+        app:background_normal="@color/colorPrimary"
+        android:layout_marginHorizontal="15dp"
+        app:corner_radius="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        app:ripple="true"
+        app:ripple_color="@color/color_bg1"
+        />
+
+</com.ruffian.library.widget.RLinearLayout>

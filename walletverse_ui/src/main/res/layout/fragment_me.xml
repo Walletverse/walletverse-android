@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Walletverse_Text1"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="15dp"
+        android:text="@string/profile"
+        android:textSize="18sp" />
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:id="@+id/v_setting"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:border_color_normal="@color/color_bg3"
+        app:border_width_normal="1dp"
+        app:corner_radius="12dp"
+        app:ripple="true"
+        app:ripple_color="@color/color_bg1">
+
+        <TextView
+            style="@style/Walletverse_Text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/icon_setting"
+            android:drawablePadding="10dp"
+            android:text="@string/setting"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_enter" />
+
+    </com.ruffian.library.widget.RLinearLayout>
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:id="@+id/v_export"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:border_color_normal="@color/color_bg3"
+        app:border_width_normal="1dp"
+        app:corner_radius="12dp"
+        app:ripple="true"
+        app:ripple_color="@color/color_bg1">
+
+        <TextView
+            style="@style/Walletverse_Text1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/icon_export"
+            android:drawablePadding="10dp"
+            android:text="@string/export_all_private_keys"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_enter" />
+
+    </com.ruffian.library.widget.RLinearLayout>
+</LinearLayout>

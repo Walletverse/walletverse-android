@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    app:corner_radius="12dp"
+    app:background_normal="@color/white"
+    android:paddingVertical="15dp"
+    android:minHeight="200dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Walletverse_Text1_Bold"
+        android:text="BeFi"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/v_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="15dp"
+        android:overScrollMode="never"
+        />
+
+    <com.walletverse.ui.view.WalletverseButton
+        android:id="@+id/v_copy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:befi_text="@string/copy"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        />
+
+
+
+</com.ruffian.library.widget.RLinearLayout>

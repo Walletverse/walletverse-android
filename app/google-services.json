@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "189422451249",
+    "project_id": "befisdk",
+    "storage_bucket": "befisdk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189422451249:android:8de0570d8c256ac6927310",
+        "android_client_info": {
+          "package_name": "com.business.befisdkdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189422451249-qrmngr8gj7avu68lr7vcmck9tbb56r1b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.business.befisdkdemo",
+            "certificate_hash": "4e6d65614f331fbdd70d0f5c85a72e1c1476fbfb"
+          }
+        },
+        {
+          "client_id": "189422451249-im1hp5k0fj96i1cppvvvul6anqocdavf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeJb_7JvigDFXNozIDQx-tjHTWwpr6sgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189422451249-im1hp5k0fj96i1cppvvvul6anqocdavf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/view_titlebar"/>
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_name"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/wallet_name"
+        android:inputType="text"
+        app:background_normal="@color/color_bg1"
+        android:maxLength="50"
+        app:corner_radius="12dp"
+        android:layout_marginHorizontal="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Walletverse_Text2"
+        android:text="@string/wallet_password"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        />
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_wallet_password"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="5dp"
+        android:hint="@string/wallet_password"
+        android:inputType="text"
+        app:background_normal="@color/color_bg1"
+        android:maxLength="16"
+        app:corner_radius="12dp"
+        android:layout_marginHorizontal="15dp"
+        android:digits="@string/digits_input_wallet_password"
+        />
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/v_wallet_password_tip1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="5dp"
+        app:icon_normal_left="@mipmap/icon_close_gray"
+        android:drawablePadding="5dp"
+        android:text="@string/wallet_pwd_tip_1"
+        style="@style/Walletverse_Text2"
+        />
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@+id/v_wallet_password_tip2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="5dp"
+        app:icon_normal_left="@mipmap/icon_close_gray"
+        android:drawablePadding="5dp"
+        android:text="@string/wallet_pwd_tip_2"
+        style="@style/Walletverse_Text2"
+        />
+
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_check_wallet_password"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/check_wallet_password"
+        android:inputType="text"
+        app:background_normal="@color/color_bg1"
+        android:maxLength="16"
+        app:corner_radius="12dp"
+        android:layout_marginHorizontal="15dp"
+        android:digits="@string/digits_input_wallet_password"
+        />
+
+
+    <TextView
+        android:id="@+id/v_pin_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Walletverse_Text2"
+        android:text="@string/please_input_6_pin"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
+        />
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_pin"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="5dp"
+        android:hint="@string/pin"
+        android:inputType="number"
+        app:background_normal="@color/color_bg1"
+        android:maxLength="6"
+        app:corner_radius="12dp"
+        android:layout_marginHorizontal="15dp"/>
+
+    <com.ruffian.library.widget.REditText
+        android:id="@+id/v_check_pin"
+        style="@style/Walletverse_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/check_pin"
+        android:inputType="number"
+        app:background_normal="@color/color_bg1"
+        android:maxLength="6"
+        app:corner_radius="12dp"
+        android:layout_marginHorizontal="15dp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <com.walletverse.ui.view.WalletverseButton
+        android:id="@+id/v_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:befi_text="@string/create"
+        android:layout_marginBottom="30dp"
+        android:layout_marginHorizontal="15dp"
+        />
+
+</LinearLayout>
