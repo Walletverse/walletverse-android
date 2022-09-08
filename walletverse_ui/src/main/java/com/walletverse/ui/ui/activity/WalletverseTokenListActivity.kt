@@ -169,7 +169,6 @@ class WalletverseTokenListActivity : BaseActivity(), OnItemClickListener, OnLoad
                                     Walletverse.sInstance.saveWalletCoinAsync(SaveCoinParams(wid, pwd, mChain))
                                 walletCoins =
                                     Walletverse.sInstance.queryWalletCoinsAsync(GetWalletCoinParams(wid))
-                                EventBusUtil.post(RefreshEvent(WalletFragment.REFRESH_EVENT))
                                 if (result) {
                                     val tokenResult = Walletverse.sInstance.saveWalletCoinAsync(
                                         SaveCoinParams(
@@ -182,7 +181,6 @@ class WalletverseTokenListActivity : BaseActivity(), OnItemClickListener, OnLoad
                                         mTokenListAdapter.data[position].isAdd = true
                                         mTokenListAdapter.notifyItemChanged(position)
                                         ToastUtil.showSuccess(getString(R.string.add_success))
-                                        EventBusUtil.post(RefreshEvent(WalletFragment.REFRESH_EVENT))
                                     } else {
                                         ToastUtil.showSuccess(getString(R.string.add_fail))
                                     }
@@ -223,7 +221,6 @@ class WalletverseTokenListActivity : BaseActivity(), OnItemClickListener, OnLoad
                     mTokenListAdapter.data[position].isAdd = true
                     mTokenListAdapter.notifyItemChanged(position)
                     ToastUtil.showSuccess(getString(R.string.add_success))
-                    EventBusUtil.post(RefreshEvent(WalletFragment.REFRESH_EVENT))
                 } else {
                     ToastUtil.showSuccess(getString(R.string.add_fail))
                 }
@@ -239,5 +236,11 @@ class WalletverseTokenListActivity : BaseActivity(), OnItemClickListener, OnLoad
     override fun onLoadMore(refreshLayout: RefreshLayout) {
         mPage++
         getData()
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        EventBusUtil.post(RefreshEvent(WalletFragment.REFRESH_EVENT))
     }
 }
