@@ -10,8 +10,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        startActivity(Intent(this, HomeActivity::class.java))
-//        startActivity(Intent(this, BeFiWeb2LoginActivity::class.java))
         startActivity(Intent(this, EnterActivity::class.java))
         finish()
     }

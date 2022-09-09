@@ -280,7 +280,7 @@ class WalletverseTransferActivity : BaseActivity() {
         lifecycleScope.launch(Dispatchers.Main) {
             try {
 //                showLoading()
-//                val nonce = BeFi.sInstance.nonceAsync(
+//                val nonce = Walletverse.sInstance.nonceAsync(
 //                    GetParams(
 //                        mCoin.chainId,
 //                        mCoin.address,
@@ -293,7 +293,7 @@ class WalletverseTransferActivity : BaseActivity() {
 //                    return@launch
 //                }
 //
-//                val privateKey = BeFi.sInstance.decodeMessageAsync(
+//                val privateKey = Walletverse.sInstance.decodeMessageAsync(
 //                    DecodeMessageParams(
 //                        mCoin.privateKey,
 //                        SPUtils.getInstance().getString(Constants.PWD)
@@ -315,7 +315,7 @@ class WalletverseTransferActivity : BaseActivity() {
 //
 //                Logger.e(signTransactionParams.toString())
 //
-//                val signData = BeFi.sInstance.signTransactionAsync(
+//                val signData = Walletverse.sInstance.signTransactionAsync(
 //                    signTransactionParams
 //                )
 //
@@ -326,7 +326,7 @@ class WalletverseTransferActivity : BaseActivity() {
 //                    return@launch
 //                }
 //
-//                val hash = BeFi.sInstance.transactionAsync(
+//                val hash = Walletverse.sInstance.transactionAsync(
 //                    TransactionParams(
 //                        mCoin.chainId,
 //                        mCoin.address,

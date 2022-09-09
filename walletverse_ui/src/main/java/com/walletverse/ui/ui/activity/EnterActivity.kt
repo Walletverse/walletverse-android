@@ -37,7 +37,7 @@ class EnterActivity : BaseActivity() {
 
 //        ThreadExecutor.instance?.execute {
 //            kotlin.run {
-//                val result:MutableList<Coin> = BeFiDBHelper.mInstance!!.queryWalletCoins("1234")
+//                val result:MutableList<Coin> = WalletverseDBHelper.mInstance!!.queryWalletCoins("1234")
 //                runOnUiThread {
 //                    ToastUtil.showSuccess(result.size.toString())
 //                }

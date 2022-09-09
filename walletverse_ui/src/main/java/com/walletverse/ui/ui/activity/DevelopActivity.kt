@@ -62,7 +62,7 @@ class DevelopActivity : BaseActivity() {
                 }
             }
 
-//            BeFi.sInstance.nonce(GetParams("", "", ""),object :ResultCallback<String>{
+//            Walletverse.sInstance.nonce(GetParams("", "", ""),object :ResultCallback<String>{
 //                override fun onError(error: Exception) {
 //                    Log.e(TAG, "onError: $error" )
 //                }
@@ -100,7 +100,7 @@ class DevelopActivity : BaseActivity() {
                 }
             )
 //            CoroutineScope(Dispatchers.Main).launch {
-//                val decimals = BeFi.sInstance.encodeMessage(
+//                val decimals = Walletverse.sInstance.encodeMessage(
 //                    EncodeMessageParams("testpassword")
 //                )
 //                tx_result.text = decimals;
@@ -124,7 +124,7 @@ class DevelopActivity : BaseActivity() {
 
 
 //            CoroutineScope(Dispatchers.Main).launch {
-//                val decimals = BeFi.sInstance.encodeMessage(
+//                val decimals = Walletverse.sInstance.encodeMessage(
 //                    EncodeMessageParams("testpassword")
 //                )
 //                tx_result.text = decimals;
@@ -152,7 +152,7 @@ class DevelopActivity : BaseActivity() {
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
-//               BeFi.sInstance.requestTokenList(TokenParams(1,50,""),object :ResultCallback<MutableList<Coin>>{
+//               Walletverse.sInstance.requestTokenList(TokenParams(1,50,""),object :ResultCallback<MutableList<Coin>>{
 //                   override fun onError(error: Exception) {
 //                       Log.e(TAG, "onError: $error")
 //                   }

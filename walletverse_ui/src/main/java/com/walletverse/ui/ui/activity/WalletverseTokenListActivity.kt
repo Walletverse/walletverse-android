@@ -146,7 +146,6 @@ class WalletverseTokenListActivity : BaseActivity(), OnItemClickListener, OnLoad
     }
 
     override fun onRightClick(titleBar: TitleBar?) {
-//        ActivityUtil.goActivity(this, BeFiAddTokenActivity::class.java)
         val bundle = Bundle()
         bundle.putSerializable("chain", mChain)
         ActivityUtil.goActivity(this, WalletverseTokenSearchActivity::class.java, bundle)

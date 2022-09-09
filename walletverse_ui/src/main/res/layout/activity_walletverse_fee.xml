@@ -52,14 +52,6 @@
             android:layout_height="wrap_content"
             android:textSize="12sp" />
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/v_balance"-->
-        <!--            android:layout_width="0dp"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_weight="1"-->
-        <!--            style="@style/BeFi_Text3"-->
-        <!--            android:textSize="12sp"-->
-        <!--            android:gravity="right"/>-->
 
     </LinearLayout>
 

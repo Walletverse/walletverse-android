@@ -48,7 +48,7 @@ class WalletverseCoinDetailActivity : BaseActivity(), OnRefreshLoadMoreListener 
     private var mRecordList = arrayListOf<TransactionRecord>()
 
     companion object {
-        const val REFRESH_EVENT = "BeFiCoinDetailActivity"
+        const val REFRESH_EVENT = "WalletverseCoinDetailActivity"
     }
 
     override fun getLayoutId(): Int {

@@ -65,20 +65,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-<!--    <com.ruffian.library.widget.RTextView-->
-<!--        android:id="@+id/v_create"-->
-<!--        style="@style/BeFi_Button"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:text="@string/create"-->
-<!--        app:corner_radius="24dp"-->
-<!--        app:background_normal="@color/colorPrimary"-->
-<!--        app:text_color_normal="@color/color_tv1"-->
-<!--        android:layout_marginHorizontal="15dp"-->
-<!--        android:layout_marginBottom="30dp"-->
-<!--        app:ripple="true"-->
-<!--        app:ripple_color="@color/white"-->
-<!--        />-->
 
     <com.walletverse.ui.view.WalletverseButton
         android:id="@+id/v_create"

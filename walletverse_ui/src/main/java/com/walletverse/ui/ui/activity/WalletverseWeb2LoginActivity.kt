@@ -1,6 +1,5 @@
 package com.walletverse.ui.ui.activity
 
-//import com.befi.core.federated.GoogleFederated
 
 import android.content.Intent
 import android.os.Bundle

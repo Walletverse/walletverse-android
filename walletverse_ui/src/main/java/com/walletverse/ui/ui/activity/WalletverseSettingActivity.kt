@@ -128,8 +128,6 @@ class WalletverseSettingActivity : BaseActivity() {
 
                     EventBusUtil.post(RefreshEvent(WalletFragment.REFRESH_EVENT))
 
-//                    ActivityUtil.goNewActivity(this@BeFiSettingActivity, HomeActivity::class.java)
-//                    finish()
                 }
             }
             R.id.v_unit_layout -> {
@@ -155,8 +153,6 @@ class WalletverseSettingActivity : BaseActivity() {
 
                     EventBusUtil.post(RefreshEvent(WalletFragment.REFRESH_EVENT))
 
-//                    ActivityUtil.goNewActivity(this@BeFiSettingActivity, HomeActivity::class.java)
-//                    finish()
                 }
 
             }

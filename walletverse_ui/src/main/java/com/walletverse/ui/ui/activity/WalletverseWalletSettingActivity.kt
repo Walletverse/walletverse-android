@@ -244,10 +244,6 @@ class WalletverseWalletSettingActivity : BaseActivity() {
                                     EventBusUtil.post(RefreshEvent(WalletFragment.REFRESH_EVENT))
                                     EventBusUtil.post(CloseEvent(WalletverseChainManageActivity.CLOSE_EVENT))
 
-    //                                ActivityUtil.goActivity(
-    //                                    this@BeFiWalletSettingActivity,
-    //                                    HomeActivity::class.java,
-    //                                )
                                     finish()
                                 }
                                 withContext(Dispatchers.Main) {

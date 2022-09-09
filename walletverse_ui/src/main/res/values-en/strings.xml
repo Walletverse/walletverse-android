@@ -12,7 +12,7 @@
     <string name="import_wallet">Import wallet</string>
     <string name="import_text">Import</string>
     <string name="import_existing_wallet">Import existing mnemonic or private key</string>
-    <string name="hello_befi_example_com">hello_befi@example.com</string>
+    <string name="hello_walletverse_example_com">hello_walletverse@example.com</string>
     <string name="wallet_name">Wallet Name</string>
     <string name="pin">PIN</string>
     <string name="check_pin">Check PIN</string>

@@ -12,7 +12,7 @@
     <string name="import_wallet">導入錢包</string>
     <string name="import_text">導入</string>
     <string name="import_existing_wallet">導入已有助記詞或私鑰</string>
-    <string name="hello_befi_example_com">hello_befi@example.com</string>
+    <string name="hello_walletverse_example_com">hello_walletverse@example.com</string>
     <string name="wallet_name">錢包名稱</string>
     <string name="pin">PIN</string>
     <string name="check_pin">驗證PIN</string>

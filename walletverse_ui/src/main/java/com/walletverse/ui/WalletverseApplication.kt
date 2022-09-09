@@ -10,7 +10,6 @@ import com.walletverse.core.core.VoidCallback
 import com.walletverse.core.enums.Currency
 import com.walletverse.core.enums.Language
 import com.walletverse.core.enums.Unit
-//import com.befi.core.federated.GoogleFederated
 import com.walletverse.ui.constant.Constants
 import com.walletverse.ui.constant.GlobalConstants
 import com.blankj.utilcode.util.DeviceUtils
@@ -18,7 +17,6 @@ import com.blankj.utilcode.util.LanguageUtils
 import com.blankj.utilcode.util.SPUtils
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
-//import com.scwang.smart.refresh.footer.BallPulseFooter
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.MaterialHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
@@ -58,26 +56,20 @@ class WalletverseApplication : Application() {
         Walletverse.install(this, Constants.APPID, Constants.APPKEY, userConfig, object : VoidCallback {
             override fun onResult() {
                 //init success
-                Log.d("BeFiApplication", "sdk init success")
+                Log.d("WalletverseApplication", "sdk init success")
             }
 
             override fun onError(error: Exception) {
-                Log.e("BeFiApplication", "onError: ${error.toString()}")
+                Log.e("WalletverseApplication", "onError: ${error.toString()}")
             }
         })
 
-//        BeFi.initWeb2LoginConfig(
-//            arrayListOf(
-//                GoogleFederated("Google", R.mipmap.icon_auth_google, "", "")
-//            )
-//        )
 
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(DefaultRefreshHeaderCreator { context, layout ->
             layout.setPrimaryColorsId(R.color.colorPrimary, R.color.white)
             MaterialHeader(context)
         })
         SmartRefreshLayout.setDefaultRefreshFooterCreator { context, layout ->
-//            BallPulseFooter(context).setSpinnerStyle(SpinnerStyle.FixedBehind)
             ClassicsFooter(context)
         }
 

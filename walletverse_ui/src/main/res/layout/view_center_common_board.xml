@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/Walletverse_Text1_Bold"
-        android:text="BeFi"
+        android:text="Walletverse"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="15dp"/>
 

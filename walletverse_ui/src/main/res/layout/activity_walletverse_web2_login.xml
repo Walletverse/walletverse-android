@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="15dp"
-            android:hint="@string/hello_befi_example_com"
+            android:hint="@string/hello_walletverse_example_com"
             android:inputType="textEmailAddress"
             app:background_normal="@color/color_bg1"
             app:corner_radius="24dp"

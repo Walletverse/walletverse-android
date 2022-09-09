@@ -50,19 +50,6 @@ class HomeActivity : BaseActivity() {
 
 
     override fun initView() {
-//        lifecycleScope.launch(Dispatchers.IO){
-//            val defaultBean = ManagerApi.requestSupportChains()
-//        }
-//        BeFi.sInstance.requestSupportChains(object :ResultCallback<MutableList<Coin>>{
-//            override fun onError(error: Exception) {
-//
-//            }
-//
-//            override fun onResult(data: Result<MutableList<Coin>>) {
-//                Logger.e(data.getOrNull()?.size.toString())
-//            }
-//
-//        })
     }
 
 

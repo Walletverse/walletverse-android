@@ -34,7 +34,7 @@ class WalletverseChainManageActivity : BaseActivity(), OnItemChildClickListener 
     private lateinit var identity: Identity
 
     companion object {
-        const val CLOSE_EVENT = "BeFiChainManageActivity"
+        const val CLOSE_EVENT = "WalletverseChainManageActivity"
     }
 
     override fun getLayoutId(): Int {
