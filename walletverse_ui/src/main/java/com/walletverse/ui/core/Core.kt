@@ -8,13 +8,13 @@ import kotlin.math.pow
 fun getGwei(gasPrice: String): Double {
     if(gasPrice.isEmpty())
         return 0.0
-    return gasPrice.toBigDecimal().divide(BigDecimal(1000000000)).setScale(18, RoundingMode.UP)
+    return gasPrice.toBigDecimal().divide(BigDecimal(1000000000)).setScale(8, RoundingMode.UP)
         .stripTrailingZeros()
         .toDouble()
 }
 
 fun getGasPrice(gwei: Double): String {
-    return gwei.toBigDecimal().multiply(BigDecimal(1000000000)).setScale(18, RoundingMode.UP)
+    return gwei.toBigDecimal().multiply(BigDecimal(1000000000)).setScale(8, RoundingMode.UP)
         .stripTrailingZeros().toString()
 }
 
