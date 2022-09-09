@@ -8,6 +8,7 @@ import com.walletverse.ui.base.BaseActivity
 import com.walletverse.ui.util.ActivityUtil
 import com.walletverse.ui.util.ContractUtil
 import com.blankj.utilcode.util.TimeUtils
+import com.walletverse.ui.core.setScale
 import kotlinx.android.synthetic.main.activity_walletverse_transaction_detail.*
 
 class WalletverseTransactionDetailActivity : BaseActivity() {
@@ -35,8 +36,8 @@ class WalletverseTransactionDetailActivity : BaseActivity() {
             }
         }
         v_time.text=TimeUtils.millis2String(recorder.timestamp)
-        v_amount.text="${recorder.value} ${recorder.symbol?:""}"
-        v_fee.text="${recorder.gas} ${ContractUtil.getContract(recorder.contract)}"
+        v_amount.text="${setScale(recorder.value)} ${recorder.symbol?:""}"
+        v_fee.text="${setScale(recorder.gas)} ${ContractUtil.getContract(recorder.contract)}"
         v_to_address.text=recorder.to
         v_from_address.text=recorder.from
         v_hash.text=recorder.hash

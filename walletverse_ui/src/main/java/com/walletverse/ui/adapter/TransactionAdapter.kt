@@ -6,6 +6,7 @@ import com.walletverse.ui.util.StringUtil
 import com.blankj.utilcode.util.TimeUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.walletverse.ui.core.setScale
 
 
 /**
@@ -20,6 +21,6 @@ class TransactionAdapter(layoutResId: Int) :BaseQuickAdapter<TransactionRecord,B
     override fun convert(holder: BaseViewHolder, item: TransactionRecord) {
         holder.setText(R.id.v_address,StringUtil.formatAddress(item.to))
         holder.setText(R.id.v_date,TimeUtils.millis2String(item.timestamp))
-        holder.setText(R.id.v_value, if (item.value != "0") "-${item.value}" else item.value)
+        holder.setText(R.id.v_value, if (item.value != "0") "-${setScale(item.value)}" else item.value)
     }
 }
