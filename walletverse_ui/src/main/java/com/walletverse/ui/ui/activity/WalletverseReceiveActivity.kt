@@ -21,7 +21,8 @@ import kotlinx.android.synthetic.main.activity_walletverse_receive.*
 class WalletverseReceiveActivity : BaseActivity() {
     private lateinit var scanImage: Bitmap
     private lateinit var address:String
-    private lateinit var mCoin: Coin
+    private lateinit var contract: String
+    private lateinit var symbol: String
 
     override fun getLayoutId(): Int {
         return R.layout.activity_walletverse_receive
@@ -39,17 +40,17 @@ class WalletverseReceiveActivity : BaseActivity() {
         }
 
         val bundle = intent.extras
-        mCoin = bundle?.getSerializable("coin") as Coin
-        address=mCoin.address
-
+        address= bundle?.getString("address").toString()
+        contract= bundle?.getString("contract").toString()
+        symbol= bundle?.getString("symbol").toString()
 
         initTitleBar(
             getString(R.string.receive),
             backgroundColor = ContextCompat.getColor(this, R.color.transparent)
         )
 
-        v_receive_tip.text=getString(R.string.receive_tip,mCoin.contract)
-        v_scan_receive_tip.text=getString(R.string.receive_tip2,mCoin.symbol)
+        v_receive_tip.text=getString(R.string.receive_tip,contract)
+        v_scan_receive_tip.text=getString(R.string.receive_tip2,symbol)
 
         v_status_bar.layoutParams = LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT,

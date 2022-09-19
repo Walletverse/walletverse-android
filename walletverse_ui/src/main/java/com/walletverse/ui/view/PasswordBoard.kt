@@ -94,6 +94,7 @@ class PasswordBoard(context: Context, onCompletedListener: DialogUtil.OnComplete
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setCircleStatus(numTrue: Int) {
         for (i in 0..5) {
             mCircles[i] = false

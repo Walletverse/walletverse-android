@@ -16,6 +16,7 @@ object MarkerUtil {
             "0x4b82"->return R.mipmap.icon_local_true_unchecked_light
             "0xa86a"->return R.mipmap.icon_local_avax_unchecked_light
             "0x89"->return R.mipmap.icon_local_polygon_unchecked_light
+            "0xb3"->return R.mipmap.icon_local_abey_unchecked_light
         }
         return R.mipmap.icon_circle_placeholder
     }

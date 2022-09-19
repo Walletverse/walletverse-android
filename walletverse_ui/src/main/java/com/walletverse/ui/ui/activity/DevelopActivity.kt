@@ -1,6 +1,7 @@
 package com.walletverse.ui.ui.activity
 
 import android.annotation.SuppressLint
+import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.walletverse.core.Walletverse
@@ -11,6 +12,8 @@ import com.walletverse.ui.R
 import com.walletverse.ui.base.BaseActivity
 import com.blankj.utilcode.util.DeviceUtils
 import com.orhanobut.logger.Logger
+import com.walletverse.core.enums.EChain
+import com.walletverse.ui.util.ActivityUtil
 import kotlinx.android.synthetic.main.activity_develop.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -166,9 +169,12 @@ class DevelopActivity : BaseActivity() {
 
 
         b_sdk_version.setOnClickListener {
-            val versionCode=Walletverse.sInstance.getSDKVersionCode()
-            val versionName=Walletverse.sInstance.getSDKVersionName()
-            tx_result.text="$versionCode--$versionName"
+            val versionCode = Walletverse.sInstance.getSDKVersionCode()
+            val versionName = Walletverse.sInstance.getSDKVersionName()
+            tx_result.text = "$versionCode--$versionName"
         }
+
+
+
     }
 }

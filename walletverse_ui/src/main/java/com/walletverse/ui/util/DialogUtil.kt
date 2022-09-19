@@ -9,6 +9,7 @@ import com.blankj.utilcode.util.ScreenUtils
 import com.blankj.utilcode.util.SizeUtils
 import com.lxj.xpopup.XPopup
 import com.lxj.xpopup.interfaces.OnSelectListener
+import com.walletverse.ui.bean.DAppTransferParams
 
 
 /**
@@ -54,6 +55,7 @@ object DialogUtil {
 
     interface OnCompletedListener {
         fun passwordComplete(pass: String, dialog: PasswordBoard)
+        fun onCancel()
     }
 
     fun showPasswordDialog(
@@ -89,6 +91,29 @@ object DialogUtil {
             .asCustom(TransferBoard(context, transferParams, onCommonListener))
             .show()
     }
+
+
+    interface OnDAppActionListener {
+        fun onConfirm()
+        fun onCancel()
+    }
+
+    fun showDAppTransferDialog(
+        context: Context,
+        dAppTransferParams: DAppTransferParams,
+        onDAppActionListener: OnDAppActionListener
+    ) {
+        XPopup.Builder(context)
+            .hasShadowBg(true)
+            .moveUpToKeyboard(false)
+            .isCoverSoftInput(true)
+            //.hasBlurBg(true)
+            .isDestroyOnDismiss(true)
+            .asCustom(DAppTransferBoard(context, dAppTransferParams, onDAppActionListener))
+            .show()
+    }
+
+
 
     interface OnInputConfirmListener {
         fun onConfirm(text: String)

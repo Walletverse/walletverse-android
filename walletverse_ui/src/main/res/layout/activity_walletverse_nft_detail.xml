@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="98dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/view_titlebar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <com.ruffian.library.widget.RConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                app:border_color_normal="@color/color_bg1"
+                app:border_width_normal="1dp"
+                app:corner_radius="16dp">
+
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/v_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/enter_bg"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:riv_corner_radius="16dp" />
+
+                <TextView
+                    android:id="@+id/v_nft_name"
+                    style="@style/Walletverse_Text1_Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="12dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Mutant Ape Yacht Club"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/v_line"
+                    app:layout_constraintLeft_toLeftOf="@+id/v_image"
+                    app:layout_constraintTop_toBottomOf="@+id/v_image" />
+
+                <View
+                    android:id="@+id/v_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="15dp"
+                    android:background="@color/color_bg1"
+                    app:layout_constraintBottom_toTopOf="@id/v_recycler"
+                    app:layout_constraintTop_toBottomOf="@+id/v_nft_name" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/v_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/v_line"
+                    android:layout_marginTop="8dp"/>
+
+            </com.ruffian.library.widget.RConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <com.walletverse.ui.view.WalletverseButton
+        android:id="@+id/v_transfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="30dp"
+        app:befi_text="@string/transfer" />
+
+
+</FrameLayout>

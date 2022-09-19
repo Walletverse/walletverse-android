@@ -248,6 +248,10 @@ class WalletverseTransferActivity : BaseActivity() {
                                 ToastUtil.showError(getString(R.string.wrong_pin))
                             }
                         }
+
+                        override fun onCancel() {
+
+                        }
                     })
                 }
 
@@ -438,7 +442,7 @@ class WalletverseTransferActivity : BaseActivity() {
     private fun notifyFee() {
         mFee = getFee(mGasPrice, mGasLimit, mCoin.decimals)
         v_fee.text = "$mFee ${ContractUtil.getContract(mCoin.contract)}"
-        v_fee_price.text = "GasPrice(${mGwei}GWEI)*Gas($mGasLimit)"
+        v_fee_price.text = "GasPrice(${mGwei}GWEI)*GasLimit($mGasLimit)"
     }
 
 }

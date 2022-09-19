@@ -139,6 +139,9 @@ class WalletverseWalletSettingActivity : BaseActivity() {
                 }
             }
 
+            override fun onCancel() {
+            }
+
         })
     }
 
@@ -191,6 +194,9 @@ class WalletverseWalletSettingActivity : BaseActivity() {
                                             } else {
                                                 ToastUtil.showError(getString(R.string.wrong_pin))
                                             }
+                                        }
+
+                                        override fun onCancel() {
                                         }
 
                                     })
@@ -257,6 +263,9 @@ class WalletverseWalletSettingActivity : BaseActivity() {
                     } else {
                         ToastUtil.showError(getString(R.string.wrong_pin))
                     }
+                }
+
+                override fun onCancel() {
                 }
             })
     }

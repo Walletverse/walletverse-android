@@ -23,3 +23,15 @@ class TransferParams(
     val gasFee: String,
     val gas: String
 ): Serializable
+
+@Keep
+class DAppTransferParams(
+    val value: String,
+    val symbol: String,
+    val contract: String,
+    val from: String,
+    val to: String,
+    val gasFee: String,
+    val gas: String,
+    val action:String?=""
+): Serializable

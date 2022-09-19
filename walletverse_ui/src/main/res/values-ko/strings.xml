@@ -105,4 +105,7 @@
     <string name="graphics_verification_error">도형 인증번호 실수</string>
     <string name="email_verification_code">이메일 인증코드</string>
     <string name="email_verification_code_error">이메일 인증코드 실수</string>
+    <string name="nft">NFT</string>
+    <string name="transfer_collection">컬렉션 전송</string>
+    <string name="sign_data">서명 데이터</string>
 </resources>

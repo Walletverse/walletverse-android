@@ -89,6 +89,9 @@ class MeFragment : BaseFragment() {
                             }
                         }
 
+                        override fun onCancel() {
+                        }
+
                     })
             }
         }

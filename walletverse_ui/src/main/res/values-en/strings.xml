@@ -105,4 +105,7 @@
     <string name="graphics_verification_error">Graphics Verification Error</string>
     <string name="email_verification_code">Email Verification Code</string>
     <string name="email_verification_code_error">Email Verification Code Error</string>
+    <string name="nft">NFT</string>
+    <string name="transfer_collection">Transfer Collection</string>
+    <string name="sign_data">Data</string>
 </resources>

@@ -129,7 +129,7 @@ class WalletverseFeeActivity : BaseActivity() {
 
     private fun notifyFee() {
         v_fee.text = "${getFee(mGasPrice, mGasLimit, mDecimals)} ${mFee.contract}"
-        v_fee_price.text = "GasPrice(${mGwei}GWEI)*Gas($mGasLimit)"
+        v_fee_price.text = "GasPrice(${mGwei}GWEI)*GasLimit($mGasLimit)"
     }
 
 

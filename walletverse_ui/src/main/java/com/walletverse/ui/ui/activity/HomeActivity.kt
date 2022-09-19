@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import com.walletverse.ui.R
 import com.walletverse.ui.adapter.FragmentAdapter
 import com.walletverse.ui.base.BaseActivity
+import com.walletverse.ui.ui.fragment.DAppFragment
 import com.walletverse.ui.ui.fragment.MeFragment
+import com.walletverse.ui.ui.fragment.NftFragment
 import com.walletverse.ui.ui.fragment.WalletFragment
 import com.walletverse.ui.util.ToastUtil
 import kotlinx.android.synthetic.main.activity_home.*
@@ -25,13 +27,14 @@ class HomeActivity : BaseActivity() {
         event?.let { ToastUtil.showSuccess(it) }
 
         fragments.add(WalletFragment())
-//        fragments.add(DAppFragment())
+//        fragments.add(NftFragment())
+        fragments.add(DAppFragment())
         fragments.add(MeFragment())
 
         val fragmentAdapter = FragmentAdapter(fragments, supportFragmentManager)
         viewPager.adapter = fragmentAdapter
         viewPager.setScroll(false)
-        viewPager.offscreenPageLimit = 3
+        viewPager.offscreenPageLimit = 4
 
 //        val bottomStringArray = resources.getStringArray(R.array.bottom_navigation)
 //        for (i in bottomStringArray.indices) {
@@ -40,7 +43,8 @@ class HomeActivity : BaseActivity() {
         bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_wallet -> viewPager.setCurrentItem(0, false)
-//                R.id.nav_dapp -> viewPager.setCurrentItem(1, false)
+//                R.id.nav_nft -> viewPager.setCurrentItem(1, false)
+                R.id.nav_dapp -> viewPager.setCurrentItem(1, false)
                 R.id.nav_me -> viewPager.setCurrentItem(2, false)
             }
             true

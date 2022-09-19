@@ -12,6 +12,18 @@
         android:name=".WalletverseApplication"
         android:networkSecurityConfig="@xml/network_security_config">
         <activity
+            android:name=".ui.activity.WalletverseNftDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseDAppActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseNftTransferActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.WalletverseCollectionDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.WalletverseWebViewActivity"
             android:exported="false" />
         <activity

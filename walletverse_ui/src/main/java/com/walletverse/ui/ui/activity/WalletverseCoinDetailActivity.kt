@@ -218,7 +218,9 @@ class WalletverseCoinDetailActivity : BaseActivity(), OnRefreshLoadMoreListener 
             }
             R.id.v_receive -> {
                 val bundle = Bundle()
-                bundle.putSerializable("coin", mCoin)
+                bundle.putString("address",mCoin.address)
+                bundle.putString("contract",mCoin.contract)
+                bundle.putString("symbol",mCoin.symbol)
                 ActivityUtil.goActivity(this, WalletverseReceiveActivity::class.java, bundle)
             }
             R.id.v_address -> {

@@ -105,4 +105,7 @@
     <string name="graphics_verification_error">圖形驗證碼錯誤</string>
     <string name="email_verification_code">郵箱驗證碼</string>
     <string name="email_verification_code_error">郵箱驗證碼錯誤</string>
+    <string name="nft">NFT</string>
+    <string name="transfer_collection">轉贈藏品</string>
+    <string name="sign_data">簽名數據</string>
 </resources>

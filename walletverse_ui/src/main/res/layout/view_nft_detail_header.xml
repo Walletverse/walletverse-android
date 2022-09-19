@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingVertical="15dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/v_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher"
+        app:riv_corner_radius="12dp" />
+
+    <TextView
+        android:id="@+id/v_nft_name"
+        style="@style/Walletverse_Text1_Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="ZED Horse"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/v_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agurse"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:layout_marginHorizontal="6dp"
+            android:background="@color/color_tv2" />
+
+        <TextView
+            android:id="@+id/v_nft_count"
+            style="@style/Walletverse_Text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1件藏品"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/v_nft_intro"
+        style="@style/Walletverse_Text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:text="The NFT horse racing game,Fed Run oo Matic net workFed Run oo Matic net work..."
+        android:textSize="12sp"
+        android:maxLines="3"
+        android:ellipsize="end"/>
+
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:id="@+id/v_contract_address_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="6dp"
+        app:border_color_normal="@color/color_tv3"
+        app:border_width_normal="0.5dp"
+        app:corner_radius="100dp">
+
+        <TextView
+            android:id="@+id/v_contract_address"
+            style="@style/Walletverse_Text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/icon_copy"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="合约地址: 0nEITW…783UIER012"
+            android:textSize="12sp" />
+
+    </com.ruffian.library.widget.RLinearLayout>
+
+    <include
+        android:id="@+id/v_empty"
+        layout="@layout/view_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:visibility="gone"
+        />
+
+</LinearLayout>

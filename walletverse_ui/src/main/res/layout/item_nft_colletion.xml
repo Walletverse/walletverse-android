@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    app:background_normal="@color/white"
+    app:ripple="true"
+    app:ripple_color="@color/color_bg1"
+    android:paddingVertical="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/v_nft_icon"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            app:riv_corner_radius="12dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/v_nft_name"
+                style="@style/Walletverse_Text1_Bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:text="MAPPER"/>
+
+            <TextView
+                android:id="@+id/v_nft_intro"
+                style="@style/Walletverse_Text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="12sp"
+                android:text="基于区块链的分布式云计算资源市场"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/v_nft_count"
+            style="@style/Walletverse_Text1_Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:text="1 Pieces"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="76dp"
+        android:background="@color/color_bg1" />
+
+</com.ruffian.library.widget.RLinearLayout>
