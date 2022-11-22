@@ -12,6 +12,7 @@ import com.walletverse.ui.bean.FeeBean
 import com.walletverse.ui.core.getFee
 import com.walletverse.ui.core.getGasPrice
 import com.walletverse.ui.core.setScale
+import com.walletverse.ui.util.ContractUtil
 import com.walletverse.ui.util.EventBusUtil
 import kotlinx.android.synthetic.main.activity_walletverse_fee.*
 import java.math.BigDecimal
@@ -127,8 +128,9 @@ class WalletverseFeeActivity : BaseActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun notifyFee() {
-        v_fee.text = "${getFee(mGasPrice, mGasLimit, mDecimals)} ${mFee.contract}"
+        v_fee.text = "${getFee(mGasPrice, mGasLimit, mDecimals)} ${ContractUtil.getContract(mFee.contract!!)}"
         v_fee_price.text = "GasPrice(${mGwei}GWEI)*GasLimit($mGasLimit)"
     }
 
