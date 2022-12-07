@@ -3,6 +3,7 @@ package com.walletverse.ui.ui.activity
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.blankj.utilcode.util.SPUtils
+import com.orhanobut.logger.Logger
 import com.walletverse.core.Walletverse
 import com.walletverse.core.bean.*
 import com.walletverse.core.core.ResultCallback
@@ -426,7 +427,7 @@ class WalletverseDAppActivity : BaseActivity() {
                                                                 coin.address
                                                             )
                                                         )
-                                                    val dAppMessage = DAppMessage(
+                                                    val dAppMessage = DAppMessageParams(
                                                         dataObj!!.optString("data"),
                                                         dataObj.optString("__type"),
                                                         privateKey,
@@ -441,6 +442,7 @@ class WalletverseDAppActivity : BaseActivity() {
                                                                     dAppMessage
                                                                 )
                                                             )
+                                                        Logger.e(signMessageResult)
                                                         v_webview.jsCallback(
                                                             id!!,
                                                             "",
