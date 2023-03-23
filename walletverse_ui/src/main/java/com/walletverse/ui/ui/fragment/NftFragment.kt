@@ -1,10 +1,6 @@
 package com.walletverse.ui.ui.fragment
 
 import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.listener.OnItemClickListener
-import com.walletverse.core.bean.NFT
 import com.walletverse.ui.R
 import com.walletverse.ui.adapter.NftCollectionAdapter
 import com.walletverse.ui.base.BaseFragment
@@ -20,30 +16,39 @@ import kotlinx.android.synthetic.main.fragment_nft.*
  * Detail：
  * ================================================================
  */
-class NftFragment : BaseFragment(), OnItemClickListener {
+class NftFragment : BaseFragment() {
     private lateinit var mNftCollectionAdapter: NftCollectionAdapter
 
     override fun getLayoutId(): Int = R.layout.fragment_nft
 
     override fun initData() {
-        val list= arrayListOf<NFT>()
-        for (i in 0..10){
-            list.add(NFT(""))
-        }
-        mNftCollectionAdapter.setList(list)
 
     }
+
 
     override fun initView() {
-        v_recycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        mNftCollectionAdapter = NftCollectionAdapter(R.layout.item_nft_colletion)
-        v_recycler.adapter = mNftCollectionAdapter
-        mNftCollectionAdapter.setOnItemClickListener(this)
+//        v_recycler.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+//        mNftCollectionAdapter = NftCollectionAdapter(R.layout.item_nft_colletion)
+//        v_recycler.adapter = mNftCollectionAdapter
+//        mNftCollectionAdapter.setOnItemClickListener(this)
+        v_nft_collections.setOnClickListener(this)
     }
 
-    override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
-        ActivityUtil.goActivity(requireActivity(), WalletverseCollectionDetailActivity::class.java)
+    override fun onClick(v: View) {
+        super.onClick(v)
+        when (v.id) {
+            R.id.v_nft_collections -> {
+                ActivityUtil.goActivity(
+                    requireActivity(),
+                    WalletverseCollectionDetailActivity::class.java
+                )
+            }
+        }
     }
+//
+//    override fun onItemClick(adapter: BaseQuickAdapter<*, *>, view: View, position: Int) {
+//        ActivityUtil.goActivity(requireActivity(), WalletverseCollectionDetailActivity::class.java)
+//    }
 
 
 }

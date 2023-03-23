@@ -27,7 +27,7 @@ class HomeActivity : BaseActivity() {
         event?.let { ToastUtil.showSuccess(it) }
 
         fragments.add(WalletFragment())
-//        fragments.add(NftFragment())
+        fragments.add(NftFragment())
         fragments.add(DAppFragment())
         fragments.add(MeFragment())
 
@@ -43,9 +43,9 @@ class HomeActivity : BaseActivity() {
         bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_wallet -> viewPager.setCurrentItem(0, false)
-//                R.id.nav_nft -> viewPager.setCurrentItem(1, false)
-                R.id.nav_dapp -> viewPager.setCurrentItem(1, false)
-                R.id.nav_me -> viewPager.setCurrentItem(2, false)
+                R.id.nav_nft -> viewPager.setCurrentItem(1, false)
+                R.id.nav_dapp -> viewPager.setCurrentItem(2, false)
+                R.id.nav_me -> viewPager.setCurrentItem(3, false)
             }
             true
         }

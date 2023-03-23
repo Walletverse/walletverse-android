@@ -5,10 +5,10 @@
         android:icon="@mipmap/icon_wallet_unselected_light"
         android:title="@string/wallet" />
 
-<!--    <item-->
-<!--        android:id="@+id/nav_nft"-->
-<!--        android:icon="@mipmap/icon_n_unselected_light"-->
-<!--        android:title="@string/nft" />-->
+    <item
+        android:id="@+id/nav_nft"
+        android:icon="@mipmap/icon_n_unselected_light"
+        android:title="@string/nft" />
 
         <item
             android:id="@+id/nav_dapp"

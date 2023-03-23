@@ -97,19 +97,18 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal">
 
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/v_chain_image"
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
-                        app:riv_corner_radius="8dp"
-                        android:src="@mipmap/icon_local_polygon_unchecked_light"/>
+<!--                    <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                        android:id="@+id/v_chain_image"-->
+<!--                        android:layout_width="14dp"-->
+<!--                        android:layout_height="14dp"-->
+<!--                        app:riv_corner_radius="8dp"-->
+<!--                        android:src="@mipmap/icon_local_polygon_unchecked_light"/>-->
 
                     <TextView
                         android:id="@+id/v_chain_name"
                         style="@style/Walletverse_Text2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
                         android:textSize="12sp"
                         android:text="Pologon"/>
 

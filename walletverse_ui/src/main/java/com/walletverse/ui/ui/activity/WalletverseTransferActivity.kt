@@ -369,7 +369,7 @@ class WalletverseTransferActivity : BaseActivity() {
                     ToastUtil.showSuccess(getString(R.string.transfer_success))
                     GlobalHandler.sInstance.postDelayed(Runnable {
                         EventBusUtil.post(RefreshEvent(WalletverseCoinDetailActivity.REFRESH_EVENT))
-                    },2000)
+                    }, 2000)
                     finish()
                 } else {
                     ToastUtil.showError(getString(R.string.transfer_failed))

@@ -2,8 +2,10 @@ package com.walletverse.ui.adapter
 
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.walletverse.core.bean.Attribute
 import com.walletverse.core.bean.NFT
 import com.walletverse.core.bean.NameValue
+import com.walletverse.ui.R
 
 
 /**
@@ -13,11 +15,12 @@ import com.walletverse.core.bean.NameValue
  * Detail：
  * ================================================================
  */
-class WalletverseAttributesAdapter(layoutResId: Int) : BaseQuickAdapter<NameValue, BaseViewHolder>(layoutResId) {
+class WalletverseAttributesAdapter(layoutResId: Int) : BaseQuickAdapter<Attribute, BaseViewHolder>(layoutResId) {
 
 
-    override fun convert(holder: BaseViewHolder, item: NameValue) {
-
+    override fun convert(holder: BaseViewHolder, item: Attribute) {
+        holder.setText(R.id.v_key,item.trait_type)
+        holder.setText(R.id.v_name,item.value)
     }
 
 }

@@ -13,6 +13,8 @@ class Constants {
         const val APPID = "97a183f8e0fd9f0629d30ceea2105dc0"
         const val APPKEY = "231fff545322962d9278c19de7f80180"
 
+        const val NFT_CONTRACT="0x8b6d309d2a68a4bdd6ead9f12bc44bc4baa0f8c8"
+
         const val PWD="pwd"
         const val CURRENT_WID="current_wid"
         const val CURRENT_LANGUAGE: String="current_language"
