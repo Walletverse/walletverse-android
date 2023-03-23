@@ -1108,7 +1108,8 @@ object : ResultCallback<String> {
 
 1.注册Google账号
 
-2.打开[Google登录Android文档](https://developers.google.com/identity/sign-in/android/start-integrating)官方文档，按要求配置相关Google
+2.打开[Google登录Android文档](https://developers.google.com/identity/sign-in/android/start-integrating)
+官方文档，按要求配置相关Google
 Play相关服务
 
 3.获取Google登录返回的唯一id
@@ -1414,6 +1415,168 @@ Walletverse.sInstance.changeUnit(unit: Unit)
 Walletverse.sInstance.validatePassword(value: String): Boolean
 ```
 
+### NFT相关调用
+
+##### 3.61 NFT转账数据生成
+
+```kotlin
+ Walletverse.sInstance.requestNFTTransferData(
+    NFTParams(
+        tokenId = tokenId,//nft的id
+        contractAddress = Constants.NFT_CONTRACT,//nft合约地址
+        chainId = EChain.MAP.chainId,//链id
+        from = fromAddress,//转出地址
+        to = address//转入地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            val inputData = data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+##### 3.62 NFT签名交易信息
+
+```kotlin
+ Walletverse.sInstance.signNFTTransaction(
+    NFTSignTransactionParams(
+        chainId,
+        privateKey,//私钥
+        fromAddress,//当前钱包地址
+        gasPrice,//手续费gasPrice
+        gasLimit,//手续费gasLimit
+        nonce,
+        inputData,
+        contract_address//合约地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            sign = data.getOrNull() //签名后的数据
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+##### 3.63 NFT发送交易
+
+```kotlin
+ Walletverse.sInstance.transactionNFT(
+    NFTTransactionParams(
+        chainId,
+        fromAddress,//转出地址
+        toAddress,//转入地址
+        signData,
+        contract_address//合约地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            //hash不为空表示交易发送成功，但具体是否转账成功，需要链上信息作为最终确认结果
+            val hash = data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+##### 3.64 NFT签名并发送交易
+
+```kotlin
+ Walletverse.sInstance.signAndNFTTransaction(
+    SignAndNFTTransactionParams(
+        chainId,
+        privateKey,
+        fromAddress,//转出地址
+        toAddress,//转入地址
+        gasPrice,
+        gasLimit,
+        inputData,
+        contract_address//合约地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            //hash不为空表示交易发送成功，但具体是否转账成功，需要链上信息作为最终确认结果
+            val hash = data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+##### 3.65 NFT列表
+
+```kotlin
+ Walletverse.sInstance.requestNFTList(
+    NFTParams(
+        address,//当前钱包地址
+        contract_address,//合约地址
+        chainId,
+        page,//页码
+        size,//每页数量
+    ),
+    object : ResultCallback<NFTList> {
+        override fun onResult(data: Result<NFTList>) {
+            // 成功
+            NFTList为对象，NFTList.total为总数量，NFTList.items为nft列表
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+##### 3.66 NFT详情
+
+```kotlin
+ Walletverse.sInstance.requestNFTDetail(
+    NFTParams(
+        tokenId,//NFT的id
+        contract_address,//合约地址
+        chainId
+    ),
+    object : ResultCallback<NFT> {
+        override fun onResult(data: Result<NFT>) {
+            // 成功
+            val nft=data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
 ### WebView相关
 
 > 基于SDK支持的主链，提供了DApp相关的交互能力。
@@ -1423,14 +1586,14 @@ Walletverse.sInstance.validatePassword(value: String): Boolean
 
 ```kotlin
 
-    data class DApp(
-        val wid: String,//钱包id
-        val name: String,//dapp名称
-        val url: String,//dapp地址
-        val chain: EChain//主链，请正确注入主链。例如：dapp是Pancake，则入参为EChain.BNB
-    )
+data class DApp(
+    val wid: String,//钱包id
+    val name: String,//dapp名称
+    val url: String,//dapp地址
+    val chain: EChain//主链，请正确注入主链。例如：dapp是Pancake，则入参为EChain.BNB
+)
 
-    WalletverseDAppWebView.loadDApp(dapp:DApp)
+WalletverseDAppWebView.loadDApp(dapp:DApp)
 
 
 ```
@@ -1439,28 +1602,24 @@ Walletverse.sInstance.validatePassword(value: String): Boolean
 
 ```kotlin
 
-    WalletverseDAppWebView.setResultCallback(object : ResultCallback<String> {
+WalletverseDAppWebView.setResultCallback(object : ResultCallback<String> {
 
-        override fun onError(error: Exception) {
+    override fun onError(error: Exception) {
 
-        }
+    }
 
-        override fun onResult(data: Result<String>) {
-             val dappData = data.getOrNull() //返回数据
-             //目前提供的dapp交互方法有dappsSign，dappsSignSend，dappsSignMessage。
-             ....//处理数据相关请查看demo中WalletverseDAppActivity相关处理
-        
-             //注意：
-             // 当处理数据后，请调用WalletverseDAppWebView.jsCallback( id!!, "", data )通知js数据处理结果。
-             // 如果处理数据失败或取消，请调用WalletverseDAppWebView.jsCallback( id!!, "", "")通知js数据处理结果
-        }
+    override fun onResult(data: Result<String>) {
+        val dappData = data.getOrNull() //返回数据
+        //目前提供的dapp交互方法有dappsSign，dappsSignSend，dappsSignMessage。
+        ....//处理数据相关请查看demo中WalletverseDAppActivity相关处理
+
+        //注意：
+        // 当处理数据后，请调用WalletverseDAppWebView.jsCallback( id!!, "", data )通知js数据处理结果。
+        // 如果处理数据失败或取消，请调用WalletverseDAppWebView.jsCallback( id!!, "", "")通知js数据处理结果
+    }
 })
 
 ```
-
-
-
-
 
 ### 币转账流程
 
@@ -1658,6 +1817,197 @@ object : ResultCallback<String> {
         Log.e(TAG, "onError: $error")
     }
 }
+)
+
+```
+
+### NFT转账流程
+
+> 完整的转账流程如下：
+>
+> 1.获取nonce
+
+```kotlin
+ Walletverse.sInstance.nonce(
+    GetParams(
+        chainId,
+        address,//当前代币地址
+        contractAddress,//可选
+),
+object : ResultCallback<String> {
+    override fun onResult(data: Result<String>) {
+        // 成功
+        Log.i(TAG, "onResult: ${data.getOrNull()}")
+        val nonce = data.getOrNull()
+    }
+
+    override fun onError(error: Exception) {
+        Log.e(TAG, "onError: $error")
+    }
+}
+)
+
+```
+
+> 2.获取inputData
+
+```kotlin
+ Walletverse.sInstance.requestNFTTransferData(
+    NFTParams(
+        tokenId = tokenId,//nft的id
+        contractAddress = Constants.NFT_CONTRACT,//nft合约地址
+        chainId = EChain.MAP.chainId,//链id
+        from = fromAddress,//转出地址
+        to = address//转入地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            val inputData = data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+> 3.解密私钥
+
+```kotlin
+ Walletverse.sInstance.decodeMessage(
+    DecodeMessageParams(
+        "privateKeyEn",    //加密后的私钥
+        "encodePin"  //加密私钥所使用的密码
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+> 4.签名交易信息
+
+```kotlin
+ Walletverse.sInstance.signNFTTransaction(
+    NFTSignTransactionParams(
+        chainId,
+        privateKey,//私钥
+        fromAddress,//当前钱包地址
+        gasPrice,//手续费gasPrice
+        gasLimit,//手续费gasLimit
+        nonce,
+        inputData,
+        contract_address//合约地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            sign = data.getOrNull() //签名后的数据
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+> 5.发送交易
+
+```kotlin
+ Walletverse.sInstance.transactionNFT(
+    NFTTransactionParams(
+        chainId,
+        fromAddress,//转出地址
+        toAddress,//转入地址
+        signData,
+        contract_address//合约地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            //hash不为空表示交易发送成功，但具体是否转账成功，需要链上信息作为最终确认结果
+            val hash = data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+> 以上为整个交易发送过程，如不关心发送过程，请调用如下方法，提供对应参数即可
+
+
+> 1.获取inputData
+
+```kotlin
+ Walletverse.sInstance.requestNFTTransferData(
+    NFTParams(
+        tokenId = tokenId,//nft的id
+        contractAddress = Constants.NFT_CONTRACT,//nft合约地址
+        chainId = EChain.MAP.chainId,//链id
+        from = fromAddress,//转出地址
+        to = address//转入地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            val inputData = data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
+)
+
+```
+
+> 2.签名并发送交易
+
+```kotlin
+ Walletverse.sInstance.signAndNFTTransaction(
+    SignAndNFTTransactionParams(
+        chainId,
+        privateKey,
+        fromAddress,//转出地址
+        toAddress,//转入地址
+        gasPrice,
+        gasLimit,
+        inputData,
+        contract_address//合约地址
+    ),
+    object : ResultCallback<String> {
+        override fun onResult(data: Result<String>) {
+            // 成功
+            Log.i(TAG, "onResult: ${data.getOrNull()}")
+            //hash不为空表示交易发送成功，但具体是否转账成功，需要链上信息作为最终确认结果
+            val hash = data.getOrNull()
+        }
+
+        override fun onError(error: Exception) {
+            Log.e(TAG, "onError: $error")
+        }
+    }
 )
 
 ```
