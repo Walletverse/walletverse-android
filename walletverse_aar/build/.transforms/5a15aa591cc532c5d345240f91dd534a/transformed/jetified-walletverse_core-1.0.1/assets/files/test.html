@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <style type="text/css">
+        html,
+        body {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding-top: 14px;
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            outline: none;
+            border-width: 0;
+            background-color: #1e88e5;
+            color: whitesmoke;
+            border-radius: 4px;
+        }
+
+        .btn-refresh {
+            right: 20px;
+            bottom: 50px;
+            position: fixed;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-style: solid;
+            border-width: 0;
+            border-radius: 50px;
+            color: white;
+        }
+
+        .btn-refresh:hover {
+            background-color: darkred;
+        }
+
+        .btn-refresh:focus {
+            background-color: darkred;
+        }
+
+        .btn-refresh:active {
+            background-color: darkred;
+        }
+
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple:focus {
+            outline: none;
+        }
+
+        .ripple:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            pointer-events: none;
+            background-color: #888;
+            background-repeat: no-repeat;
+            background-position: 50%;
+            opacity: 0;
+            transition: all .3s;
+        }
+
+        .ripple:active:after {
+            opacity: .3;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: 0s;
+        }
+
+        .icon_panda-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .icon_panda {
+            width: 100px;
+            height: 100px;
+            border-radius: 4px;
+            position: relative;
+
+        }
+    </style>
+</head>
+
+<body>
+
+<button class="btn-refresh" onclick="webRefresh()">刷新</button>
+<div class="wrap">
+
+    <div class="icon_panda-container">
+        <img class="icon_panda" src="./icon_panda2.png">
+    </div>
+
+    <button class="ripple" onclick="b0();">动作测试</button>
+    <div id="t0">&nbsp;</div>
+    <script type="text/javascript">
+        function b0() {
+            <!--            document.getElementById('t0').innerHTML = navigator.userAgent;-->
+            jhost("injectAccounts", "", function (err, data) {
+            console.log(typeof data );
+            window.__account=JSON.parse(data);
+            console.log(window.__account);
+<!--                handleCallback("动作测试", err, JSON.stringify(data));-->
+            })
+        }
+    </script>
+    <button onclick="b1();">请求Toast</button>
+    <div id="t1">&nbsp;</div>
+    <script type="text/javascript">
+        function b1() {
+            jhost("toast", JSON.stringify({title: "", message: "普通调用"}), function (err, data) {
+                handleCallback("请求Toast", err, data, "t1");
+            })
+        }
+    </script>
+    <button onclick="b2();">请求Action Scheme</button>
+    <div id="t2">&nbsp;</div>
+    <script type="text/javascript">
+        function b2() {
+            jscheme("toast", JSON.stringify({title: "", message: "Scheme调用"}), function (err, data) {
+                handleCallback("请求scheme", err, data, "t2");
+            })
+        }
+    </script>
+    <button onclick="b3();">请求接口</button>
+    <div id="t3">&nbsp;</div>
+    <script type="text/javascript">
+        function b3() {
+            document.getElementById('t3').innerHTML = "请求接口中";
+            console.log('请求接口中')
+<!--            __JSHOST.postMessage(JSON.stringify({id:"asdfas",query:{name:"小明"}}))-->
+            jhost("request", JSON.stringify({api: "http://123123", method: "get"}), function (err, data) {
+                handleCallback("请求接口", err, data, "t3");
+            })
+        }
+    </script>
+</div>
+</body>
+<script type="text/javascript" src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+<script type="text/javascript">
+    function bindResponsive() {
+        let size = document.body.clientWidth * 20 / 375;
+        document.documentElement.style.fontSize = size + "px";
+    }
+
+    window.addEventListener('resize', function () {
+        bindResponsive();
+    })
+    bindResponsive()
+    // 初始化
+    var vConsole = new VConsole();
+
+    function webRefresh() {
+        window.location.reload();
+    }
+
+    function handleCallback(method, err, data, elid) {
+        if (err && err != 0) {
+            document.getElementById(elid).innerHTML = err;
+            console.log(method, "请求失败", err)
+        } else {
+            document.getElementById(elid).innerHTML = data;
+            console.log(method, "请求成功", data)
+        }
+    }
+</script>
+
+</html>

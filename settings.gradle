@@ -18,3 +18,4 @@ rootProject.name = "WalletverseDemo"
 include ':app'
 include ':walletverse_ui'
 include ':svg_library'
+include ':walletverse_aar'
