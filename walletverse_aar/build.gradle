@@ -1,2 +1,2 @@
 configurations.maybeCreate("default")
-artifacts.add("default", file('walletverse_core-1.0.2.aar'))
+artifacts.add("default", file('walletverse_core-1.0.3.aar'))
