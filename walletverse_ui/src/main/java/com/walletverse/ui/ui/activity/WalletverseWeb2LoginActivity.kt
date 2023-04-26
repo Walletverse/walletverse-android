@@ -134,7 +134,8 @@ class WalletverseWeb2LoginActivity : BaseActivity(), TextWatcher {
             val federatedParams = FederatedParams(
                 account.email ?: account.displayName!!,
                 account.id!!,
-                Channel.Google
+//                Channel.Google,
+                "google.com",
             )
 
             judgeUserType(federatedParams)
@@ -211,7 +212,7 @@ class WalletverseWeb2LoginActivity : BaseActivity(), TextWatcher {
                             val federatedParams = FederatedParams(
                                 v_email.text.toString(),
                                 v_email.text.toString(),
-                                Channel.Email,
+                                "sys.email",
                                 auth
                             )
                             showLoading()

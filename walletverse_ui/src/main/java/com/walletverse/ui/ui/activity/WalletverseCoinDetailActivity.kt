@@ -128,7 +128,7 @@ class WalletverseCoinDetailActivity : BaseActivity(), OnRefreshLoadMoreListener 
                         50,
                         mCoin.chainId,
                         mCoin.address,
-                        Condition.OUT,
+                        Condition.ALL,
                         mCoin.contractAddress
                     )
                 )
