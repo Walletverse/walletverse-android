@@ -2,13 +2,11 @@ package com.walletverse.ui.ui.activity
 
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.walletverse.core.Walletverse
 import com.walletverse.core.bean.NFT
 import com.walletverse.core.bean.NFTParams
-import com.walletverse.core.bean.NameValue
 import com.walletverse.core.enums.EChain
 import com.walletverse.ui.R
 import com.walletverse.ui.adapter.WalletverseAttributesAdapter
@@ -53,7 +51,7 @@ class WalletverseNftDetailActivity : BaseActivity() {
                 NFTParams(
                     tokenId = tokenId,
                     contractAddress = Constants.NFT_CONTRACT,
-                    chainId = EChain.MAP.chainId
+                    chainId = EChain.MAPO.chainId
                 )
             )
             mNft = result

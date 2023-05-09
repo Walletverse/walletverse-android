@@ -68,7 +68,7 @@ class WalletverseCollectionDetailActivity : BaseActivity(), OnItemClickListener 
             val wid = SPUtils.getInstance().getString(Constants.CURRENT_WID)
             val walletCoins = Walletverse.sInstance.queryWalletCoinsAsync(GetWalletCoinParams(wid))
             val coin =
-                walletCoins?.filter { it.contract == EChain.MAP.contract && it.symbol == EChain.MAP.symbol }
+                walletCoins?.filter { it.contract == EChain.MAPO.contract && it.symbol == EChain.MAPO.symbol }
             address = coin?.get(0)?.address.toString()
             getData()
         }
@@ -92,8 +92,8 @@ class WalletverseCollectionDetailActivity : BaseActivity(), OnItemClickListener 
             R.id.v_receive -> {
                 val bundle = Bundle()
                 bundle.putString("address", address)
-                bundle.putString("contract", EChain.MAP.contract)
-                bundle.putString("symbol", EChain.MAP.symbol)
+                bundle.putString("contract", EChain.MAPO.contract)
+                bundle.putString("symbol", EChain.MAPO.symbol)
                 ActivityUtil.goActivity(this, WalletverseReceiveActivity::class.java, bundle)
             }
             R.id.v_contract_address_layout -> {
@@ -143,7 +143,7 @@ class WalletverseCollectionDetailActivity : BaseActivity(), OnItemClickListener 
                     NFTParams(
                         address,
                         Constants.NFT_CONTRACT,
-                        EChain.MAP.chainId
+                        EChain.MAPO.chainId
                     )
                 )
                 withContext(Dispatchers.Main) {

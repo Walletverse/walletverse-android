@@ -15,22 +15,16 @@ import com.permissionx.guolindev.PermissionX
 import com.walletverse.core.Walletverse
 import com.walletverse.core.bean.*
 import com.walletverse.core.enums.EChain
-import com.walletverse.core.enums.Type
 import com.walletverse.ui.R
 import com.walletverse.ui.base.BaseActivity
-import com.walletverse.ui.bean.TransferParams
 import com.walletverse.ui.constant.Constants
-import com.walletverse.ui.event.RefreshEvent
 import com.walletverse.ui.util.*
-import com.walletverse.ui.view.PasswordBoard
 import kotlinx.android.synthetic.main.activity_walletverse_nft_transfer.*
 import kotlinx.android.synthetic.main.activity_walletverse_nft_transfer.v_address
 import kotlinx.android.synthetic.main.activity_walletverse_nft_transfer.v_transfer
-import kotlinx.android.synthetic.main.activity_walletverse_transfer.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.math.BigDecimal
 
 class WalletverseNftTransferActivity : BaseActivity() {
 
@@ -61,7 +55,7 @@ class WalletverseNftTransferActivity : BaseActivity() {
 
         v_nft_name.text = name
         v_nft_icon.loadImage(image, R.mipmap.ic_launcher)
-        v_chain_name.text = EChain.MAP.contract
+        v_chain_name.text = EChain.MAPO.contract
     }
 
     override fun initView() {
@@ -82,7 +76,7 @@ class WalletverseNftTransferActivity : BaseActivity() {
                             NFTParams(
                                 tokenId = tokenId,
                                 contractAddress = Constants.NFT_CONTRACT,
-                                chainId = EChain.MAP.chainId,
+                                chainId = EChain.MAPO.chainId,
                                 from = fromAddress,
                                 to = v_address.text.toString().trim()
                             )
@@ -90,7 +84,7 @@ class WalletverseNftTransferActivity : BaseActivity() {
                         Logger.d(inputData)
 
                         val feeParams = FeeParams(
-                            EChain.MAP.chainId,
+                            EChain.MAPO.chainId,
                             fromAddress,
                             Constants.NFT_CONTRACT,
                             "0",
@@ -104,7 +98,7 @@ class WalletverseNftTransferActivity : BaseActivity() {
 
                         val nonce = Walletverse.sInstance.nonceAsync(
                             GetParams(
-                                EChain.MAP.chainId,
+                                EChain.MAPO.chainId,
                                 fromAddress,
                                 Constants.NFT_CONTRACT
                             )
@@ -134,7 +128,7 @@ class WalletverseNftTransferActivity : BaseActivity() {
                             )
                             privateKey = Walletverse.sInstance.getPrivateKeyAsync(
                                 GetPrivateKeyParams(
-                                    EChain.MAP.chainId,
+                                    EChain.MAPO.chainId,
                                     mnemonic
                                 )
                             )
@@ -180,7 +174,7 @@ class WalletverseNftTransferActivity : BaseActivity() {
 
                         val hash = Walletverse.sInstance.signAndNFTTransactionAsync(
                             SignAndNFTTransactionParams(
-                                EChain.MAP.chainId,
+                                EChain.MAPO.chainId,
                                 privateKey,
                                 fromAddress,
                                 v_address.text.toString(),

@@ -1,5 +1,6 @@
 package com.walletverse.ui.ui.fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.lifecycleScope
@@ -41,6 +42,7 @@ class DAppFragment : BaseFragment() {
         v_dapp.setOnClickListener(this)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onClick(v: View) {
         super.onClick(v)
         when (v.id) {
@@ -109,6 +111,7 @@ class DAppFragment : BaseFragment() {
 //                val dapp= DApp(SPUtils.getInstance().getString(Constants.CURRENT_WID),"UniSwap","https://uniswap.token.im/", EChain.ETH)
 //                val dapp= DApp(SPUtils.getInstance().getString(Constants.CURRENT_WID),"Opensea","https://opensea.io/", EChain.ETH)
                 val dapp= DApp(SPUtils.getInstance().getString(Constants.CURRENT_WID),"Pancake","https://pancakeswap.finance/", EChain.BNB)
+//                val dapp= DApp(SPUtils.getInstance().getString(Constants.CURRENT_WID),"MAPO DAO","https://newspace.idavoll.network/project-staking-detail/MAPProtocol", EChain.MAPO)
 //                val dapp= DApp(SPUtils.getInstance().getString(Constants.CURRENT_WID),"QuickSwap","https://quickswap.exchange/#/swap", EChain.MATIC)
 
 //                    val dapp = DApp(

@@ -19,6 +19,13 @@ import com.walletverse.ui.core.setScale
 class TransactionAdapter(layoutResId: Int) :BaseQuickAdapter<TransactionRecord,BaseViewHolder>(layoutResId) {
 
     override fun convert(holder: BaseViewHolder, item: TransactionRecord) {
+        if(item.type=="in"){
+            holder.setImageResource(R.id.v_type,R.mipmap.icon_transaction_in)
+        }else if(item.type=="out"){
+            holder.setImageResource(R.id.v_type,R.mipmap.icon_transaction_out)
+        }else{
+            holder.setImageResource(R.id.v_type,R.mipmap.icon_pending)
+        }
         holder.setText(R.id.v_address,StringUtil.formatAddress(item.to))
         holder.setText(R.id.v_date,TimeUtils.millis2String(item.timestamp))
         holder.setText(R.id.v_value, if (item.value != "0") "-${setScale(item.value)}" else item.value)

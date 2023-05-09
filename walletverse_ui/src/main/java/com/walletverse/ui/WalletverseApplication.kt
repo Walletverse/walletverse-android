@@ -51,7 +51,7 @@ class WalletverseApplication : Application() {
         initUnit()
         initGlobal()
 
-        val userConfig = UserConfig(DeviceUtils.getUniqueDeviceId(), mELanguage, mECurrency, mEUnit)
+        val userConfig = UserConfig(DeviceUtils.getUniqueDeviceId(), mELanguage, mECurrency, mEUnit, BuildConfig.DEBUG)
 
         Walletverse.install(this, Constants.APPID, Constants.APPKEY, userConfig, object : VoidCallback {
             override fun onResult() {

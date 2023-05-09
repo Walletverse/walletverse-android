@@ -149,56 +149,55 @@ class WalletverseTransferActivity : BaseActivity() {
                 }
 
 
-                if (v_gas_fee_layout.visibility == View.GONE) {
-                    if (mCoin.type == Type.COIN) {
-                        val hexValue =
-                            Walletverse.sInstance.toHexAsync(HexParams(toAmount, mCoin.decimals))
-                        inputData = Walletverse.sInstance.encodeERC20ABIAsync(
-                            EncodeERC20ABIParams(
-                                mCoin.chainId,
-                                "transfer",
-                                mCoin.contractAddress,
-                                arrayListOf(
-                                    v_address.text.toString(),
-                                    hexValue
-                                )
+                if (mCoin.type == Type.COIN) {
+                    val hexValue =
+                        Walletverse.sInstance.toHexAsync(HexParams(toAmount, mCoin.decimals))
+//                    Logger.e("${toAmount},${hexValue}")
+                    inputData = Walletverse.sInstance.encodeERC20ABIAsync(
+                        EncodeERC20ABIParams(
+                            mCoin.chainId,
+                            "transfer",
+                            mCoin.contractAddress,
+                            arrayListOf(
+                                v_address.text.toString(),
+                                hexValue
                             )
                         )
-                    }
-
-
-                    val feeParams = FeeParams(
-                        mCoin.chainId,
-                        mCoin.address,
-                        if (mCoin.type == Type.CHAIN) toAddress else mCoin.contractAddress,
-                        if (mCoin.type == Type.CHAIN) toAmount else "0",
-                        mCoin.decimals.toString(),
-                        inputData
                     )
-
-                    val fee: GasFee? = Walletverse.sInstance.feeAsync(
-                        feeParams
-                    )
-
-
-                    if (fee == null) {
-                        gasFeeGone()
-                        return@launch
-                    }
-
-
-                    v_gas_fee_layout.visibility = View.VISIBLE
-
-                    mBasicGasPrice = fee.gasPrice
-                    mBasicGasLimit = fee.gasLimit
-                    mBasicGwei = getGwei(mBasicGasPrice)
-
-                    mGasPrice = fee.gasPrice
-                    mGasLimit = fee.gasLimit
-                    mGwei = getGwei(mGasPrice)
-
-                    notifyFee()
                 }
+
+
+                val feeParams = FeeParams(
+                    mCoin.chainId,
+                    mCoin.address,
+                    if (mCoin.type == Type.CHAIN) toAddress else mCoin.contractAddress,
+                    if (mCoin.type == Type.CHAIN) toAmount else "0",
+                    mCoin.decimals.toString(),
+                    inputData
+                )
+
+                val fee: GasFee? = Walletverse.sInstance.feeAsync(
+                    feeParams
+                )
+
+
+                if (fee == null) {
+                    gasFeeGone()
+                    return@launch
+                }
+
+
+                v_gas_fee_layout.visibility = View.VISIBLE
+
+                mBasicGasPrice = fee.gasPrice
+                mBasicGasLimit = fee.gasLimit
+                mBasicGwei = getGwei(mBasicGasPrice)
+
+                mGasPrice = fee.gasPrice
+                mGasLimit = fee.gasLimit
+                mGwei = getGwei(mGasPrice)
+
+                notifyFee()
             } catch (e: Exception) {
                 e.printStackTrace()
             }
